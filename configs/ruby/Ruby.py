@@ -234,6 +234,8 @@ def create_system(options, full_system, system, piobus = None, dma_ports = [],
 
     setup_memory_controllers(system, ruby, dir_cntrls, options)
 
+    system.realview.gic.gem5_extensions=True
+
     # Connect the cpu sequencers and the piobus
     if piobus != None:
         for cpu_seq in cpu_sequencers:
